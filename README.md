@@ -1,4 +1,4 @@
-# dsa-grind
+# coffee-with-dsa
 Daily DSA practice — one problem, one commit, one step closer. 💻🔥
 
 # 🧠 DSA Daily
