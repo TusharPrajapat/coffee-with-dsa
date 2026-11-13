@@ -1,0 +1,29 @@
+class Solution {
+public:
+    int characterReplacement(string s, int k) {
+        int l = 0, r = 0;
+        int len = 0, maxLen = 0;
+        int maxF = 0;
+
+        int hash[256];
+
+        while(r < s.size()){
+            hash[s[r] - 'A']++;
+            maxF = max(maxF, hash[s[r] - 'A']);
+
+            if((r - l + 1) - maxF > k){
+                hash[s[l] - 'A']--;
+                maxF = 0;
+                l++;
+            }
+
+            if((r - l + 1) - maxF <= k){
+                maxLen = max(maxLen, r - l + 1);
+            }
+
+            r++;
+        }
+
+        return maxLen;
+    }
+};
